@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb on off</title>
+    <style>
+        body{
+            background-color: #3a3939;
+        }
+        
+        #on{
+            display: none;
+        }
+        .btn{
+            height: 60px;
+            width: 150px;
+            font-size: large;
+            border-radius: 10px;
+        }
+        .btn:hover{
+            background-color: rgb(125, 185, 185);
+            transition: transform 0.7s;
+            transform: scale(1.1);
+         }
+    </style>
+</head>
+<body>
+    <div style="display:flex; justify-content: center; margin: 50px;">
+        <img id="on" src="./images/on.gif">
+        <img id="off" src="./images/off.gif">
+    </div>
+    <div style="display:flex; justify-content: center; gap: 30px; margin: 50px;">
+        <button id="btnon" class="btn"> Turn Bulb On </button>
+        <button id="btnoff" class="btn"> Turn Bulb Off</button>
+    </div>
+    <script>
+        function bulbOn()
+        {
+            const on = document.getElementById('on');
+            on.style.display = 'initial';
+
+            const off = document.getElementById('off');
+            off.style.display = 'none';
+            
+
+        }
+        const buttonOn = document.querySelector('#btnon');
+        buttonOn.addEventListener('click', bulbOn)
+
+        function bulbOff()
+        {
+            const on = document.getElementById('on');
+            on.style.display = 'none';
+
+            const off = document.getElementById('off');
+            off.style.display = 'initial';
+            
+         }
+        const buttonOff = document.querySelector('#btnoff');
+        buttonOff.addEventListener('click', bulbOff)
+
+         
+
+    </script>
+    
+</body>
+</html>
